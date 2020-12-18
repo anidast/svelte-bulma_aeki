@@ -1,12 +1,12 @@
 <script>
 	import "./style.scss";
-  import { Router, Route } from "svelte-routing";
+  	import { Router, Route } from "svelte-routing";
 	import { Cart, Catalog, Checkout, Home, Login, Product, Register } from "./pages";
 
 	export let url= "";
 </script>
 
-<main>
+
 	<Router {url}>
 		<Route path="/" component={Home} />
 		<Route path="catalog" component={Catalog} />
@@ -16,4 +16,3 @@
     	<Route path="checkout" component={Checkout} />
 		<Route path="product" component={Product} />
 	  </Router>
-</main>
