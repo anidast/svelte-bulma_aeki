@@ -1,6 +1,7 @@
 <script>
     import "./index.scss";
-    import { Navbar } from "../../containers";
+    import { Navbar, Hero } from "../../containers";
 </script>
 
 <Navbar />
+<Hero />

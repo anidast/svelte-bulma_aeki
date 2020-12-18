@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import "./index.scss";
     import { onMount } from "svelte";
   
