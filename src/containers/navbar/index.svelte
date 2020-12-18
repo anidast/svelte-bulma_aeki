@@ -56,7 +56,7 @@
         <div class="navbar-item">
             <a href="cart"><i class="fa fa-shopping-cart" /></a>
         </div>
-        <div class="navbar-item has-dropdown">
+        <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
                 <i class="fa fa-user" />
             </a>
