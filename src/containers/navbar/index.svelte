@@ -34,7 +34,7 @@
 <nav class="navbar is-transparent is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand py-4">
 	  <a class="navbar-item has-text-black is-uppercase is-size-4 mx-5" href="/">
-		<img src="logo.png" alt="logo AEKI">
+		<img src="image/logo.png" alt="logo AEKI">
 	  </a>
 	  <a
 	  role="button"
