@@ -2,7 +2,7 @@
   import "./index.scss";
 </script>
 
-<section class="login">
+<section class="regis">
   <div class="link-home p-4">
     <a href="/"><i class="fa fa-arrow-left" /> Home</a>
   </div>
