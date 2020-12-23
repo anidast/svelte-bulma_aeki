@@ -1,0 +1,19 @@
+@import "~@glidejs/glide/src/assets/sass/glide.core";
+@import "~@glidejs/glide/src/assets/sass/glide.theme";
+
+.glide__bullet {
+    background-color: lighten(black, 10.00);
+    width: 3rem;
+    height: 1rem;
+    border-radius: 20%/100%;
+    margin: 0 0.5rem;
+
+    &:hover,
+    &:focus {
+        background-color: tint( black, 10% );
+        border: 0;
+    }
+    &--active {
+        background-color: black;
+    }
+}

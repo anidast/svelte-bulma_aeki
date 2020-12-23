@@ -1,8 +1,8 @@
 <script>
     import "./index.scss";
-    import { Navbar, Footer } from "../../containers";
+    import { Navbar, Promo, Footer } from "../../containers";
 </script>
 
 <Navbar />
-
+<Promo />
 <Footer />
