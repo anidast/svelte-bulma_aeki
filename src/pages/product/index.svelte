@@ -1,7 +1,9 @@
 <script>
     import "./index.scss";
-    import { ProductDetail, ProductsSlider } from "../../containers";
+    import { Navbar, ProductDetail, ProductsSlider, Footer } from "../../containers";
 </script>
 
+<Navbar />
 <ProductDetail />
 <ProductsSlider />
+<Footer />
