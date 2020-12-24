@@ -6,6 +6,7 @@
         $user.id = null;
         $user.username = null;
         $user.password = null;
+        window.location.href = "/";
     }
 </script>
 

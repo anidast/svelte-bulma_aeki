@@ -1,15 +1,34 @@
 <script>
   import "./index.scss";
   import { Link } from "svelte-routing";
-</script>
+  import { apiUrl, user } from "../../stores";
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-  </style>
-</head>
+  let username;
+  let password;
+
+  $: isEmpty = !username || !password;
+
+  function register() {
+    // const pages = (async () => {
+    //   const response = await fetch($apiUrl + "user/register", {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //       username: username,
+    //       password: password,
+    //     }),
+    //   });
+    //   res = await response.json();
+    //   if (res.meta.code === "created") {
+    //     $user.id = res.data.id;
+    //     $user.username = username;
+    //     $user.password = password;
+    //   }
+    // })();
+    $user.id = 1;
+    $user.username = username;
+    $user.password = password;
+  }
+</script>
 
 <section class="daftar">
   <div class="link-home p-4">
@@ -33,6 +52,7 @@
                   <input
                     class="input kotak"
                     type="text"
+                    bind:value={username}
                     placeholder="Masukkan username Anda" />
                 </div>
               </div>
@@ -42,13 +62,18 @@
                   <input
                     class="input kotak"
                     type="text"
+                    bind:value={password}
                     placeholder="Masukkan password Anda" />
                 </div>
               </div>
 
-              <button
-                class="button is-fullwidth btn">DAFTAR</button>
-              <p class="text-bawah">Sudah punya akun ? <a href="login" class="has-text-link">Login</a></p>
+              <Link to="/">
+                <button
+                  class="button is-fullwidth btn"
+                  on:click={register}
+                  disabled={isEmpty}>DAFTAR</button>
+              </Link>
+              <p class="text-bawah">Sudah punya akun ? <Link to="login"><span class="has-text-link">Login</span></Link></p>
             </div>
           </div>
         </div>
