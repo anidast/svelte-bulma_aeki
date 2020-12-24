@@ -3,7 +3,7 @@
 </script>
 
 <section class="section">
-    <p class="title is-size-3 has-text-weight-bold has-text-centered"> h2 Featured Category</p>
+    <p class="title is-size-3 has-text-weight-bold has-text-centered"> Featured Category</p>
     
     <div class="columns is-multiline">
         <div class="column is-three-fifths has-background-light p-6 my-4">
