@@ -18,6 +18,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "bulma": "^0.9.1",
     "postcss": "^8.2.1",
     "rollup-plugin-postcss": "^4.0.0",
