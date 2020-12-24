@@ -1,5 +1,6 @@
 <script>
   import "./index.scss";
+  import { Link } from "svelte-routing";
 </script>
 
 <head>
@@ -12,7 +13,7 @@
 
 <section class="daftar">
   <div class="link-home p-4">
-    <a href="/"><i class="fa fa-arrow-left" /> Home</a>
+    <Link to="/"><i class="fa fa-arrow-left" /> Home</Link>
   </div>
 
   <div class="columns">
