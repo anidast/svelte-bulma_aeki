@@ -4,6 +4,7 @@
         Navbar,
         Hero,
         FeaturedCategory,
+        ProductsList,
         ProductsSlider,
         Footer,
     } from "../../containers";
@@ -12,6 +13,33 @@
     let products;
     // let latestProducts = [];
     let latestProducts = [
+        {
+            name: "Quart Bel Chair",
+            price: 345000,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            name: "Quart Bel Chair",
+            price: 345000,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            name: "Quart Bel Chair",
+            price: 345000,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
         {
             name: "Quart Bel Chair",
             price: 345000,
@@ -88,5 +116,6 @@
 <Navbar />
 <Hero />
 <FeaturedCategory />
+<ProductsList category="Latest Product" products={latestProducts} />
 <ProductsSlider title="Best Seller" products={bestSeller} />
 <Footer />

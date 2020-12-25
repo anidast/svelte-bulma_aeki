@@ -33,7 +33,7 @@
                 <p class="title is-size-5 has-text-weight-bold mb-5">
                   ${product.name}
                 </p>
-                <p class="subtitle">${"Rp " + formatRupiah(product.price)}</p>
+                <p class="subtitle">${"Rp. " + formatRupiah(product.price)}</p>
                 <p class="text-chart">+ ADD TO CHART</p>
               </div>
             </div>
