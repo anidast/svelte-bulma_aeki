@@ -2,6 +2,14 @@
     import "./index.scss";
 </script>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    </style>
+</head>
+
 <section class="section">
     <p class="title is-size-3 has-text-weight-bold has-text-centered"> Featured Category</p>
     
@@ -12,7 +20,7 @@
                     <p class="subtitle">Premium Quality</p>
                     <p class="title">Latest Dining Table</p>
                     <br><br>
-                    <a href="/" class="has-text-warning has-text-weight-bold is-uppercase">
+                    <a href="/" class=" has-text-warning has-text-weight-bold is-uppercase">
                         Explor Now <i class="fa fa-caret-right" />
                     </a>
                 </div>
@@ -31,7 +39,7 @@
                     <p class="title">Latest Light Lamp</p>
                     <br><br>
                     <a href="/" class="has-text-warning has-text-weight-bold is-uppercase">
-                        Explor Now <i class="fa fa-caret-right" />
+                        Explore Now <i class="fa fa-caret-right" />
                     </a>
                 </div>
                 <div class="column is-half">
@@ -49,7 +57,7 @@
                     <p class="title">Latest Chair Desk</p>
                     <br><br>
                     <a href="/" class="has-text-warning has-text-weight-bold is-uppercase">
-                        Explor Now <i class="fa fa-caret-right" />
+                        Explore Now <i class="fa fa-caret-right" />
                     </a>
                 </div>
                 <div class="column is-half">
@@ -67,7 +75,7 @@
                     <p class="title">Latest Foam Sofa</p>
                     <br><br>
                     <a href="/" class="has-text-warning has-text-weight-bold is-uppercase">
-                        Explor Now <i class="fa fa-caret-right" />
+                        Explore Now <i class="fa fa-caret-right" />
                     </a>
                 </div>
                 <div class="column is-two-third">
