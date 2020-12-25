@@ -7,21 +7,41 @@
     
     <div class="columns mx-6">
         <div class="column">
-            <div class="card">
+            <div class="product_item">
                 <div class="card-image">
                   <figure class="image is-4by5">
                     <img src="image/chair2.png" alt="chair">
                   </figure>
                 </div>
                 <div class="card-content">
-                  <div class="content">
-                    <p class="title is-size-5 has-text-weight-bold">Quart Bel Chair</p>
+                  <div class="content product_text">
+                    <p class="title is-size-5 has-text-weight-bold mb-5">Quart Bel Chair</p>
                     <p class="subtitle">Rp. 345.000</p>
+                    <p class="text-chart">
+                      <a href="/">+ ADD TO CHART</a>
+                    </p>
                   </div>
                 </div>
               </div>
         </div>
-        <div class="column"></div>
+        <div class="column">
+          <div class="product_item">
+            <div class="card-image">
+              <figure class="image is-4by5">
+                <img src="image/chair2.png" alt="chair">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content product_text">
+                <p class="title is-size-5 has-text-weight-bold mb-5">Quart Bel Chair</p>
+                <p class="subtitle">Rp. 345.000</p>
+                <p class="text-chart">
+                  <a href="/">+ ADD TO CHART</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="column"></div>
         <div class="column"></div>
     </div>
