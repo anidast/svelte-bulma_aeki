@@ -1,18 +1,38 @@
 <script>
   import "./index.scss";
-</script>
+  import { Link } from "svelte-routing";
+  import { apiUrl, user } from "../../stores";
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-  </style>
-</head>
+  let username;
+  let password;
+
+  $: isEmpty = !username || !password;
+
+  function login() {
+    // const pages = (async () => {
+    //   const response = await fetch($apiUrl + "user/login", {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //       username: username,
+    //       password: password,
+    //     }),
+    //   });
+    //   res = await response.json();
+    //   if (res.meta.code === "success") {
+    //     $user.id = res.data.id;
+    //     $user.username = username;
+    //     $user.password = password;
+    //   }
+    // })();
+    $user.id = 1;
+    $user.username = username;
+    $user.password = password;
+  }
+</script>
 
 <section class="login">
   <div class="link-home p-4">
-    <a href="/"><i class="fa fa-arrow-left" /> Home</a>
+    <Link to="/"><i class="fa fa-arrow-left" /> Home</Link>
   </div>
 
   <div class="columns">
@@ -22,8 +42,7 @@
         <div class="card login-card">
           <div class="card-content">
             <div class="content">
-              <p
-                class="is-title is-uppercase has-text-centered title-login">
+              <p class="is-title is-uppercase has-text-centered title-login">
                 Login Member
               </p>
 
@@ -32,6 +51,7 @@
                   <input
                     class="input kotak"
                     type="text"
+                    bind:value={username}
                     placeholder="Masukkan username Anda" />
                 </div>
               </div>
@@ -41,14 +61,22 @@
                   <input
                     class="input kotak"
                     type="text"
+                    bind:value={password}
                     placeholder="Masukkan password Anda" />
                 </div>
               </div>
 
-              <button
-                class="button is-fullwidth btn">LOGIN</button>
+              <Link to="/">
+                <button
+                  class="button is-fullwidth btn"
+                  on:click={login}
+                  disabled={isEmpty}>LOGIN</button>
+              </Link>
 
-              <p class="text-bawah">Belum punya akun ? <a href="register" class="has-text-link">Daftar Member</a></p>
+              <p class="text-bawah">
+                Belum punya akun ?
+                <Link to="register"><span class="has-text-link">Daftar Member</span></Link>
+              </p>
             </div>
           </div>
         </div>

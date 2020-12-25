@@ -1,6 +1,8 @@
 <script>
 	import "./index.scss";
-    import { onMount } from "svelte";
+	import { onMount } from "svelte";
+	import { Link } from "svelte-routing";
+	import { UserLink } from "../index";
   
 	onMount(async () => {
 	  // START JS NAVBAR HAMBURGER
@@ -49,25 +51,20 @@
   </div>
   <div id="navbarBasicExample" class="navbar-menu">
 	<div class="navbar-start is-size-5 has-text-weight-medium">
-        <a href="/" class="navbar-item">Home</a>
-        <a href="catalog" class="navbar-item">Catalog</a>
+        <Link to="/" class="navbar-item">Home</Link>
+        <Link to="catalog" class="navbar-item">Catalog</Link>
 	</div>
 	<div class="navbar-end">
         <div class="navbar-item">
-            <a href="cart"><i class="fa fa-shopping-cart" /></a>
+            <Link to="cart"><i class="fa fa-shopping-cart" /></Link>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
                 <i class="fa fa-user" />
             </a>
             <div class="navbar-dropdown">
-                <a href="login" class="navbar-item">
-                Login
-                </a>
-                <a href="register" class="navbar-item">
-                Register
-                </a>
-            </div>
+				<UserLink />
+			</div>
         </div>
     </div>
 </nav>
