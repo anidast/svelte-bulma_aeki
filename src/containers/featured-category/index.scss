@@ -1,0 +1,16 @@
+.text-category{
+    margin-top: 60px!important;
+    margin-bottom: 60px!important;
+}
+.touch{
+    &:hover a{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.title{
+    line-height: 40px;
+}
+.is-three-fifths{
+    height: 100%;
+}
