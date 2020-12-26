@@ -5,6 +5,7 @@
 
     export let category;
 
+    //dummy
     let products = [
         {
             name: "Quart Bel Chair",
@@ -52,7 +53,9 @@
             ],
         },
     ];
+    //end of dummy
 
+    // let products;
     // const getproducts = (async () => {
     //     const response = await fetch($apiUrl + "/" + category, {
     //         method: "GET",
