@@ -11,7 +11,8 @@
     import { apiUrl } from "../../stores";
 
     let products;
-    // let latestProducts = [];
+    
+    //dummy
     let latestProducts = [
         {
             name: "Quart Bel Chair",
@@ -87,6 +88,10 @@
         },
     ];
     let bestSeller = latestProducts;
+    //end of dummy
+
+    // let latestProducts = [];
+    // let bestSeller = [];
 
     // const getlatest = (async () => {
     //     const response = await fetch($apiUrl + "product", {

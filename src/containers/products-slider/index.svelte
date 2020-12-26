@@ -16,7 +16,8 @@
     let card = "";
     console.log(title);
 
-  // <img src=${$apiUrl + product.product_photos[0].photo_url} alt=${product.name} />
+    // change line 28 with this:
+    // <img src=${$apiUrl + product.product_photos[0].photo_url} alt=${product.name} />
 
     products.forEach((product) => {
       card += `
@@ -25,7 +26,9 @@
           <div class="product_item">
             <div class="card-image">
               <figure class="image is-4by5">
-                <img src=${product.product_photos[0].photo_url} alt=${product.name} />
+                <img src=${product.product_photos[0].photo_url} alt=${
+        product.name
+      } />
               </figure>
             </div>
             <div class="card-content">

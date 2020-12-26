@@ -9,7 +9,7 @@
 
 	<Router {url}>
 		<Route path="/" component={Home} />
-		<Route path="catalog" component={Catalog} />
+		<Route path="catalog/:category" component={Catalog} />
 		<Route path="login" component={Login} />
 		<Route path="register" component={Register} />
 		<Route path="cart" component={Cart} />

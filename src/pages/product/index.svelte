@@ -4,6 +4,8 @@
     import { apiUrl } from "../../stores";
 
     let product;
+
+    //dummy
     let products = [
         {
             name: "Quart Bel Chair",
@@ -51,6 +53,9 @@
             ],
         },
     ];
+    //end of dummy
+
+    // let products = [];
 
     // const getproducts = (async () => {
     //     const response = await fetch($apiUrl + "/" + product.product_category, {

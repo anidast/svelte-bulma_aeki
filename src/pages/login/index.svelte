@@ -24,9 +24,12 @@
     //     $user.password = password;
     //   }
     // })();
+
+    //dummy
     $user.id = 1;
     $user.username = username;
     $user.password = password;
+    //end of dummy
   }
 </script>
 

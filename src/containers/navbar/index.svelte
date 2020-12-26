@@ -36,7 +36,7 @@
 <nav class="navbar is-transparent is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand py-4">
 	  <a class="navbar-item has-text-black is-uppercase is-size-4 mx-5" href="/">
-		<img src="image/logo.png" alt="logo AEKI">
+		<img src="http://localhost:5000/image/logo.png" alt="logo AEKI">
 	  </a>
 	  <a
 	  role="button"
@@ -51,8 +51,18 @@
   </div>
   <div id="navbarBasicExample" class="navbar-menu">
 	<div class="navbar-start is-size-5 has-text-weight-medium">
-        <Link to="/" class="navbar-item">Home</Link>
-        <Link to="catalog" class="navbar-item">Catalog</Link>
+		<Link to="/" class="navbar-item">Home</Link>
+		<div class="navbar-item has-dropdown is-hoverable">
+			<a class="navbar-item">Catalog</a>
+            <div class="navbar-dropdown">
+				<Link to="catalog/table" class="navbar-item">Table</Link><br>
+				<Link to="catalog/chair" class="navbar-item">Chair</Link><br>
+				<Link to="catalog/cabinet" class="navbar-item">Cabinet</Link><br>
+				<Link to="catalog/light" class="navbar-item">Light</Link><br>
+				<Link to="catalog/shofa" class="navbar-item">Shofa</Link><br>
+				<Link to="catalog/shelve" class="navbar-item">Shelve</Link>
+			</div>
+        </div>
 	</div>
 	<div class="navbar-end">
         <div class="navbar-item">
