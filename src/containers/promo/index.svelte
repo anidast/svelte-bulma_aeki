@@ -17,10 +17,10 @@
     <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
             <li class="glide__slide">
-                <img class="image is-fullwidth" src="image/promo.png" alt="promo">
+                <img class="image is-fullwidth" src="http://localhost:5000/image/promo.png" alt="promo">
             </li>
             <li class="glide__slide">
-                <img class="image is-fullwidth" src="image/promo3.png" alt="promo">
+                <img class="image is-fullwidth" src="http://localhost:5000/image/promo3.png" alt="promo">
             </li>
         </ul>
 
