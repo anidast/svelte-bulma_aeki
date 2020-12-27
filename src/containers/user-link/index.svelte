@@ -1,4 +1,5 @@
 <script>
+    import "./index.scss";
     import { user } from "../../stores";
     import { Link } from "svelte-routing";
 

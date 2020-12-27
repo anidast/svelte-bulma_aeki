@@ -5,6 +5,7 @@
         Hero,
         FeaturedCategory,
         ProductsList,
+        Chart,
         ProductsSlider,
         Footer,
     } from "../../containers";
@@ -122,5 +123,6 @@
 <Hero />
 <FeaturedCategory />
 <ProductsList category="Latest Product" products={latestProducts} />
+<Chart  products={bestSeller}/>
 <ProductsSlider title="Best Seller" products={bestSeller} />
 <Footer />
