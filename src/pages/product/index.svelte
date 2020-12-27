@@ -58,11 +58,11 @@
     // let products = [];
 
     // const getproducts = (async () => {
-    //     const response = await fetch($apiUrl + "/" + product.product_category, {
+    //     const response = await fetch(apiUrl + "/" + product.product_category, {
     //         method: "GET",
     //     });
     //     res = await response.json();
-    //     if (res.meta.code === "success") {
+    //     if (response.status == 200) {
     //         products = res.data;
     //     }
     // })();

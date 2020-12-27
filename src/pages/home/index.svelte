@@ -94,11 +94,11 @@
     // let bestSeller = [];
 
     // const getlatest = (async () => {
-    //     const response = await fetch($apiUrl + "product", {
+    //     const response = await fetch(apiUrl + "product", {
     //         method: "GET",
     //     });
     //     res = await response.json();
-    //     if (res.meta.code === "success") {
+    //     if (response.status == 200) {
     //         products = res.data;
     //         let len = products.length;
     //         for (i = len-6; i < len; i++){
@@ -108,11 +108,11 @@
     // })();
 
     // const getbestseller = (async () => {
-    //     const response = await fetch($apiUrl + "product/sold", {
+    //     const response = await fetch(apiUrl + "product/sold", {
     //         method: "GET",
     //     });
     //     res = await response.json();
-    //     if (res.meta.code === "success") {
+    //     if (response.status == 200) {
     //         bestSeller = res.data;
     //     }
     // })();
