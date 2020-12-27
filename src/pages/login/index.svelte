@@ -10,7 +10,7 @@
 
   function login() {
     // const pages = (async () => {
-    //   const response = await fetch($apiUrl + "user/login", {
+    //   const response = await fetch(apiUrl + "user/login", {
     //     method: "POST",
     //     body: JSON.stringify({
     //       username: username,
@@ -18,7 +18,7 @@
     //     }),
     //   });
     //   res = await response.json();
-    //   if (res.meta.code === "success") {
+    //   if (response.status == 200) {
     //     $user.id = res.data.id;
     //     $user.username = username;
     //     $user.password = password;
