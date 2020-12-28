@@ -14,5 +14,5 @@
 		<Route path="register" component={Register} />
 		<Route path="cart" component={Cart} />
     	<Route path="checkout" component={Checkout} />
-		<Route path="product" component={Product} />
+		<Route path="product/:id" component={Product} />
 	  </Router>
