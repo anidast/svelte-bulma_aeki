@@ -48,4 +48,3 @@
         </div>
     </div>
 </section>
-<svelte:options tag="highchart-box" />

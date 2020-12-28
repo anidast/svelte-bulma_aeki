@@ -88,7 +88,68 @@
             ],
         },
     ];
-    let bestSeller = latestProducts;
+    let bestSeller = [
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 5,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 2,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 6,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 9,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 4,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 11,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+    ];;
     //end of dummy
 
     // let latestProducts = [];
