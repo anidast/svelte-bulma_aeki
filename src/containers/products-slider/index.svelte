@@ -11,6 +11,18 @@
     return new Intl.NumberFormat("id-ID").format(money);
   };
 
+  function addToCart(id) {
+    const response = fetch(apiUrl + "/cart/add" , {
+      method: "POST",
+      body: JSON.stringify({
+        product_id: id,
+        quantity: 1,
+      })
+    });
+    res = response.json();
+    console.log(res);
+  }
+
   onMount(async () => {
     let ul = document.querySelector(".glide__slides");
     let card = "";
@@ -36,8 +48,10 @@
                 <p class="title is-size-5 has-text-weight-bold mb-5">
                   ${product.product_name}
                 </p>
-                <p class="subtitle">${"Rp. " + formatRupiah(product.product_price)}</p>
-                <p class="text-chart">+ ADD TO CHART</p>
+                <p class="subtitle">${
+                  "Rp. " + formatRupiah(product.product_price)
+                }</p>
+                <p class="text-chart" on:click={addToCart(product.id)}>+ ADD TO CART</p>
               </div>
             </div>
           </div>
