@@ -12,7 +12,7 @@
     import { apiUrl } from "../../stores";
 
     let products;
-    
+
     //dummy
     let latestProducts = [
         {
@@ -149,11 +149,13 @@
                 },
             ],
         },
-    ];;
+    ];
+    let bestSellerProducts = bestSeller;
     //end of dummy
 
     // let latestProducts = [];
     // let bestSeller = [];
+    // let bestSellerProducts = [];
 
     // const getlatest = (async () => {
     //     const response = await fetch(apiUrl + "product", {
@@ -176,6 +178,17 @@
     //     res = await response.json();
     //     if (response.status == 200) {
     //         bestSeller = res.data;
+    //         bestSeller.forEach((bs) => {
+    //             const gbsp = (async () => {
+    //                 const response = await fetch(apiUrl + "product/" + bs.id, {
+    //                     method: "GET",
+    //                 });
+    //                 res = await response.json();
+    //                 if (response.status == 200) {
+    //                     bestSellerProducts = [...bestSellerProducts, res.data]
+    //                 }
+    //             })();
+    //         });
     //     }
     // })();
 </script>
@@ -184,6 +197,6 @@
 <Hero />
 <FeaturedCategory />
 <ProductsList category="Latest Product" products={latestProducts} />
-<Chart  products={bestSeller}/>
-<ProductsSlider title="Best Seller" products={bestSeller} />
+<Chart products={bestSeller} />
+<ProductsSlider title="Best Seller" products={bestSellerProducts} />
 <Footer />
