@@ -5,10 +5,11 @@
 
     export let category;
 
+    //dummy
     let products = [
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -16,8 +17,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -25,8 +26,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -34,8 +35,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -43,8 +44,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -52,13 +53,15 @@
             ],
         },
     ];
+    //end of dummy
 
+    // let products;
     // const getproducts = (async () => {
-    //     const response = await fetch($apiUrl + "/" + category, {
+    //     const response = await fetch(apiUrl + "/" + category, {
     //         method: "GET",
     //     });
     //     res = await response.json();
-    //     if (res.meta.code === "success") {
+    //     if (response.status == 200) {
     //         products = res.data;
     //     }
     // })();

@@ -5,17 +5,19 @@
         Hero,
         FeaturedCategory,
         ProductsList,
+        Chart,
         ProductsSlider,
         Footer,
     } from "../../containers";
     import { apiUrl } from "../../stores";
 
     let products;
-    // let latestProducts = [];
+    
+    //dummy
     let latestProducts = [
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -23,8 +25,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -32,8 +34,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -41,8 +43,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -50,8 +52,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -59,8 +61,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -68,8 +70,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -77,8 +79,8 @@
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
                     photo_url: "image/chair2.png",
@@ -86,14 +88,79 @@
             ],
         },
     ];
-    let bestSeller = latestProducts;
+    let bestSeller = [
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 5,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 2,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 6,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 9,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 4,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            count: 11,
+            product_photos: [
+                {
+                    photo_url: "image/chair2.png",
+                },
+            ],
+        },
+    ];;
+    //end of dummy
+
+    // let latestProducts = [];
+    // let bestSeller = [];
 
     // const getlatest = (async () => {
-    //     const response = await fetch($apiUrl + "product", {
+    //     const response = await fetch(apiUrl + "product", {
     //         method: "GET",
     //     });
     //     res = await response.json();
-    //     if (res.meta.code === "success") {
+    //     if (response.status == 200) {
     //         products = res.data;
     //         let len = products.length;
     //         for (i = len-6; i < len; i++){
@@ -103,11 +170,11 @@
     // })();
 
     // const getbestseller = (async () => {
-    //     const response = await fetch($apiUrl + "product/sold", {
+    //     const response = await fetch(apiUrl + "product/sold", {
     //         method: "GET",
     //     });
     //     res = await response.json();
-    //     if (res.meta.code === "success") {
+    //     if (response.status == 200) {
     //         bestSeller = res.data;
     //     }
     // })();
@@ -117,5 +184,6 @@
 <Hero />
 <FeaturedCategory />
 <ProductsList category="Latest Product" products={latestProducts} />
+<Chart  products={bestSeller}/>
 <ProductsSlider title="Best Seller" products={bestSeller} />
 <Footer />

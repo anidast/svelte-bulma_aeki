@@ -10,7 +10,7 @@
 
   function register() {
     // const pages = (async () => {
-    //   const response = await fetch($apiUrl + "user/register", {
+    //   const response = await fetch(apiUrl + "user/register", {
     //     method: "POST",
     //     body: JSON.stringify({
     //       username: username,
@@ -18,15 +18,18 @@
     //     }),
     //   });
     //   res = await response.json();
-    //   if (res.meta.code === "created") {
+    //   if (response.status == 201) {
     //     $user.id = res.data.id;
     //     $user.username = username;
     //     $user.password = password;
     //   }
     // })();
+
+    //dummy
     $user.id = 1;
     $user.username = username;
     $user.password = password;
+    //end of dummy
   }
 </script>
 
