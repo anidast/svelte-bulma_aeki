@@ -7,6 +7,18 @@
   const formatRupiah = (money) => {
     return new Intl.NumberFormat("id-ID").format(money);
   };
+
+  function addToCart(id) {
+    const response = fetch(apiUrl + "/cart/add" , {
+      method: "POST",
+      body: JSON.stringify({
+        product_id: id,
+        quantity: 1,
+      })
+    });
+    res = response.json();
+    console.log(res);
+  }
 </script>
 
 <section class="section mx-6 px-6">
@@ -28,7 +40,7 @@
                 {product.product_name}
               </p>
               <p class="subtitle">{'Rp. ' + formatRupiah(product.product_price)}</p>
-              <p class="text-chart">+ ADD TO CHART</p>
+              <p class="text-chart" on:click={addToCart(product.id)}>+ ADD TO CHART</p>
             </div>
           </div>
         </div>
