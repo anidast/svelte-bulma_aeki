@@ -51,16 +51,35 @@
   </div>
   <div id="navbarBasicExample" class="navbar-menu">
 	<div class="navbar-start is-size-5 has-text-weight-medium">
-		<Link to="/">Home</Link>
+		<div class="navbar-item">
+			<Link to="/">Home</Link>
+		</div>
 		<div class="navbar-item has-dropdown is-hoverable">
-			<a class="navbar-item">Catalog</a>
+			<a class="navbar-link">Catalog</a>
             <div class="navbar-dropdown">
-				<Link to="catalog/table">Table</Link><br>
-				<Link to="catalog/chair">Chair</Link><br>
-				<Link to="catalog/cabinet">Cabinet</Link><br>
-				<Link to="catalog/light">Light</Link><br>
-				<Link to="catalog/shofa">Shofa</Link><br>
-				<Link to="catalog/shelve">Shelve</Link>
+				<div class="navbar-item nav-catalog">
+					<Link to="catalog/table">Table</Link>
+				</div>
+				<hr class="navbar-divider">
+				<div class="navbar-item nav-catalog">
+					<Link to="catalog/chair">Chair</Link>
+				</div>
+				<hr class="navbar-divider">
+				<div class="navbar-item nav-catalog">
+					<Link to="catalog/cabinet">Cabinet</Link>
+				</div>
+				<hr class="navbar-divider">
+				<div class="navbar-item nav-catalog">
+					<Link to="catalog/light">Light</Link>
+				</div>
+				<hr class="navbar-divider">
+				<div class="navbar-item nav-catalog">
+					<Link to="catalog/shofa">Shofa</Link>
+				</div>
+				<hr class="navbar-divider">
+				<div class="navbar-item nav-catalog">
+					<Link to="catalog/shelve">Shelve</Link>
+				</div>
 			</div>
         </div>
 	</div>
@@ -68,11 +87,11 @@
         <div class="navbar-item">
             <Link to="cart"><i class="fa fa-shopping-cart" /></Link>
         </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
+        <div class="navbar-item has-dropdown is-hoverable mr-5 ml-2">
+            <a class="navbar-item">
                 <i class="fa fa-user" />
             </a>
-            <div class="navbar-dropdown">
+            <div class="navbar-item navbar-dropdown">
 				<UserLink />
 			</div>
         </div>
