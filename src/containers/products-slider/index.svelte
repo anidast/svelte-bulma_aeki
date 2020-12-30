@@ -26,7 +26,6 @@
   onMount(async () => {
     let ul = document.querySelector(".glide__slides");
     let card = "";
-    console.log(title);
 
     // change line 28 with this:
     // <img src=${apiUrl + product.product_photos[0].photo_url} alt=${product.product_name} />
@@ -59,7 +58,6 @@
       </li>`;
     });
     ul.innerHTML = card;
-    console.log(ul.innerHTML);
     new Glide(".glide", {
       type: "carousel",
       perView: 4,

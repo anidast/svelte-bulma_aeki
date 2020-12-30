@@ -12,10 +12,11 @@
     import { apiUrl } from "../../stores";
 
     let products;
-    
+
     //dummy
     let latestProducts = [
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -25,6 +26,7 @@
             ],
         },
         {
+            id: 2,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -34,6 +36,7 @@
             ],
         },
         {
+            id: 3,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -43,6 +46,7 @@
             ],
         },
         {
+            id: 4,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -52,6 +56,7 @@
             ],
         },
         {
+            id: 5,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -61,6 +66,7 @@
             ],
         },
         {
+            id: 6,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -70,6 +76,7 @@
             ],
         },
         {
+            id: 7,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -79,6 +86,7 @@
             ],
         },
         {
+            id: 8,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -90,6 +98,7 @@
     ];
     let bestSeller = [
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             count: 5,
@@ -100,6 +109,7 @@
             ],
         },
         {
+            id: 2,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             count: 2,
@@ -110,6 +120,7 @@
             ],
         },
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             count: 6,
@@ -120,6 +131,7 @@
             ],
         },
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             count: 9,
@@ -130,6 +142,7 @@
             ],
         },
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             count: 4,
@@ -140,6 +153,7 @@
             ],
         },
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             count: 11,
@@ -149,11 +163,13 @@
                 },
             ],
         },
-    ];;
+    ];
+    let bestSellerProducts = bestSeller;
     //end of dummy
 
     // let latestProducts = [];
     // let bestSeller = [];
+    // let bestSellerProducts = [];
 
     // const getlatest = (async () => {
     //     const response = await fetch(apiUrl + "product", {
@@ -176,6 +192,17 @@
     //     res = await response.json();
     //     if (response.status == 200) {
     //         bestSeller = res.data;
+    //         bestSeller.forEach((bs) => {
+    //             const gbsp = (async () => {
+    //                 const response = await fetch(apiUrl + "product/" + bs.id, {
+    //                     method: "GET",
+    //                 });
+    //                 res = await response.json();
+    //                 if (response.status == 200) {
+    //                     bestSellerProducts = [...bestSellerProducts, res.data]
+    //                 }
+    //             })();
+    //         });
     //     }
     // })();
 </script>
@@ -184,6 +211,6 @@
 <Hero />
 <FeaturedCategory />
 <ProductsList category="Latest Product" products={latestProducts} />
-<Chart  products={bestSeller}/>
-<ProductsSlider title="Best Seller" products={bestSeller} />
+<Chart products={bestSeller} />
+<ProductsSlider title="Best Seller" products={bestSellerProducts} />
 <Footer />

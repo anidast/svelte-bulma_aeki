@@ -12,8 +12,8 @@
 </script>
 
 {#if $user.id}
-    <Link to="/" class="navbar-item" on:click={logout}>Logout</Link>
+    <Link to="/" on:click={logout}>Logout</Link>
 {:else}
-    <Link to="login" class="navbar-item">Login</Link>
-    <Link to="register" class="navbar-item">Register</Link>
+    <Link to="login">Login</Link>
+    <Link to="register">Register</Link>
 {/if}
