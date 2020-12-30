@@ -23,9 +23,24 @@
 </script>
 
 <section class="section mx-6 px-6">
-  <p class="title is-size-3 has-text-weight-bold mx-6">{category}</p>
+  <div class="columns mb-5">
+    <div class='column is-three-fifths'>
+      <p class="title is-size-3 has-text-weight-bold mx-6">{category}</p>
+    </div>
+    <div class='column is-two-fifths'>
+      <div class="panel-block" style="float:right">
+        <p class="control has-icons-left">
+          <input class="input box-input" type="text" placeholder="Search">
+          <span class="icon is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  
 
-  <div class="columns is-multiline ml-6">
+  <div class="columns is-multiline ml-6 mt-4">
     {#each products as product}
       <Link to={'product/' + product.id}>
         <div class="column">
