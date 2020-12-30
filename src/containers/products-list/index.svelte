@@ -25,10 +25,10 @@
 <section class="section mx-6 px-6">
   <p class="title is-size-3 has-text-weight-bold mx-6">{category}</p>
 
-  <div class="columns is-multiline mx-6">
+  <div class="columns is-multiline ml-6">
     {#each products as product}
       <Link to={'product/' + product.id}>
-        <div class="column is-3">
+        <div class="column">
           <div class="product_item">
             <div class="card-image">
               <figure class="image is-4by4">
