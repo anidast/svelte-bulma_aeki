@@ -8,6 +8,7 @@
     //dummy
     let products = [
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -17,6 +18,7 @@
             ],
         },
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -26,6 +28,7 @@
             ],
         },
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -35,6 +38,7 @@
             ],
         },
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
@@ -44,6 +48,7 @@
             ],
         },
         {
+            id: 1,
             product_name: "Quart Bel Chair",
             product_price: 345000,
             product_photos: [
