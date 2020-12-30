@@ -9,5 +9,6 @@ import Promo from "./promo/index.svelte";
 import ProductsList from "./products-list/index.svelte";
 import Checkout from "./checkout/index.svelte";
 import Chart from "./chart/index.svelte";
+import Cart from "./cart/index.svelte";
 
-export { Navbar,UserLink, Footer, Hero, FeaturedCategory, ProductsSlider, ProductDetail, Promo, ProductsList, Checkout, Chart };
+export { Navbar,UserLink, Footer, Hero, FeaturedCategory, ProductsSlider, ProductDetail, Promo, ProductsList, Checkout, Chart, Cart };
