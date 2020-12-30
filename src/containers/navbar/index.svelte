@@ -51,16 +51,16 @@
   </div>
   <div id="navbarBasicExample" class="navbar-menu">
 	<div class="navbar-start is-size-5 has-text-weight-medium">
-		<Link to="/" class="navbar-item">Home</Link>
+		<Link to="/">Home</Link>
 		<div class="navbar-item has-dropdown is-hoverable">
 			<a class="navbar-item">Catalog</a>
             <div class="navbar-dropdown">
-				<Link to="catalog/table" class="navbar-item">Table</Link><br>
-				<Link to="catalog/chair" class="navbar-item">Chair</Link><br>
-				<Link to="catalog/cabinet" class="navbar-item">Cabinet</Link><br>
-				<Link to="catalog/light" class="navbar-item">Light</Link><br>
-				<Link to="catalog/shofa" class="navbar-item">Shofa</Link><br>
-				<Link to="catalog/shelve" class="navbar-item">Shelve</Link>
+				<Link to="catalog/table">Table</Link><br>
+				<Link to="catalog/chair">Chair</Link><br>
+				<Link to="catalog/cabinet">Cabinet</Link><br>
+				<Link to="catalog/light">Light</Link><br>
+				<Link to="catalog/shofa">Shofa</Link><br>
+				<Link to="catalog/shelve">Shelve</Link>
 			</div>
         </div>
 	</div>
