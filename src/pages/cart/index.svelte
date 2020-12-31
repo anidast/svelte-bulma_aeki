@@ -1,8 +1,10 @@
 <script>
     import "./index.scss";
-    import { Navbar, Footer } from "../../containers";
+    import { Navbar, Cart, Footer } from "../../containers";
+
+    
 </script>
 
 <Navbar />
-
+<Cart />
 <Footer />
