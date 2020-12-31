@@ -1,4 +1,22 @@
 .hero{
     background-size: cover;
-    margin-top: 4%;
+    // margin-top: 4%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.text-40{
+    color: red;
+    font-weight: 800;
+}
+.line-rule{
+    &::before{
+        content: " ";
+        border-bottom: 1px solid grey;
+        width: 100px;
+        position: absolute;
+        top: 8%;
+    }
+    .subtitle{
+        margin-left: 110px;
+    }
 }

@@ -11,13 +11,13 @@
 </head>
 
 <section class="section">
-    <p class="title is-size-3 has-text-weight-bold has-text-centered text-category"> Featured Category</p>
+    <p class="title is-size-3 has-text-weight-bold has-text-centered text-category">Featured Category</p>
     
-    <div class="columns is-multiline mx-5">
-        <div class="column is-three-fifths has-background-light p-6 my-4 touch">
+    <div class="columns is-multiline mx-2">
+        <div class="column is-three-fifths has-background-light p-6 my-4 mr-5 touch">
             <div class="columns">
                 <div class="column is-half">
-                    <p class="subtitle">Premium Quality</p>
+                    <p class="subtitle is-size-6">Premium Quality</p>
                     <p class="title">Latest Dining <br> Table</p>
                     <br><br>
                     <p class="is-invisible">
@@ -34,10 +34,10 @@
             </div>
         </div>
 
-        <div class="column is-two-fifths p-6 my-4 touch">
+        <div class="column is-two-fifths p-6 my-4 touch bg-right">
             <div class="columns">
                 <div class="column is-half">
-                    <p class="subtitle">Premium Quality</p>
+                    <p class="subtitle is-size-6">Premium Quality</p>
                     <p class="title">Latest Light Lamp</p>
                     <br><br>
                     <p class="is-invisible">
@@ -54,10 +54,10 @@
             </div>
         </div>
 
-        <div class="column is-two-fifths p-6 mt-4 touch">
+        <div class="column is-two-fifths p-6 mt-4 touch bg-right">
             <div class="columns">
                 <div class="column is-half">
-                    <p class="subtitle">Premium Quality</p>
+                    <p class="subtitle is-size-6">Premium Quality</p>
                     <p class="title">Latest Chair Desk</p>
                     <br><br>
                     <p class="is-invisible">
@@ -74,10 +74,10 @@
             </div>
         </div>
 
-        <div class="column is-three-fifths has-background-light p-6 my-4 touch">
+        <div class="column is-three-fifths has-background-light p-6 my-4 ml-5 touch">
             <div class="columns">
                 <div class="column is-one-third">
-                    <p class="subtitle">Premium Quality</p>
+                    <p class="subtitle is-size-6">Premium Quality</p>
                     <p class="title">Latest Foam Sofa</p>
                     <br><br>
                     <p class="is-invisible">
