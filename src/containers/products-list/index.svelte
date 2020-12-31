@@ -40,13 +40,13 @@
   </div>
   
 
-  <div class="columns is-multiline ml-6 mt-4">
+  <div class="columns is-multiline is-justify-content-center mt-2">
     {#each products as product}
       <Link to={'product/' + product.id}>
         <div class="column">
           <div class="product_item">
             <div class="card-image">
-              <figure class="image is-4by4">
+              <figure class="image is-4by5">
                 <!-- <img src={apiUrl + product.product_photos[0].photo_url} alt={product.product_name} /> -->
                 <img
                   src={product.product_photos[0].photo_url}
@@ -55,7 +55,7 @@
             </div>
             <div class="card-content">
               <div class="content product_text">
-                <p class="title is-size-5 has-text-weight-bold mb-5">
+                <p class="title is-size-5 has-text-weight-bold mb-4">
                   {product.product_name}
                 </p>
                 <p class="subtitle">

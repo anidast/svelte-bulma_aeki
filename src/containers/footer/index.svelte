@@ -35,13 +35,13 @@
 		  	<p class="title is-5 has-text-white has-text-weight-bold">Ikuti Kami</p>
 		  	<p class="subtitle has-text-white is-size-6 mt-5">Jangan lupa follow akun social media kami</p>
 		  	<div class="content">
-		      <a class="icon" href={linkFacebook}>
+		      <a class="icon mt-5" href={linkFacebook}>
 		        <i class="fab fa-facebook fa-2x" style="color:white"/>
 		      </a>
-		      <a class="icon ml-6" href={linkInstagram}>
+		      <a class="icon ml-5" href={linkInstagram}>
 		        <i class="fab fa-instagram fa-2x" style="color:white"/>
 		      </a>
-		      <a class="icon ml-6" href={linkYoutube}>
+		      <a class="icon ml-5" href={linkYoutube}>
 		        <i class="fab fa-youtube fa-2x" style="color:white"/>
 		      </a>
 		    </div>

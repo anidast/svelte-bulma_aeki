@@ -1,0 +1,37 @@
+.text-chart{
+    color: #00539F!important;
+    font-weight: 700;
+    visibility: hidden;
+}
+.content{
+    margin-top: -15px!important;
+}
+.product_item{
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+    position: relative;
+    &:hover
+    {
+        border-radius: 0.25rem;
+        box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+        color: #4a4a4a;
+        max-width: 100%;
+        overflow: hidden!important;
+        .card-image{
+            background-color: #FCF9F5;
+            transition: 0.5s;
+        }
+        .product_text{
+            // margin-top: -20px;
+            padding: 10px;
+            transition: 0.3s;
+        }
+        .text-chart{
+            opacity: 1;
+            visibility: visible;
+            transition: 0.3s;
+            margin-top: -10px;
+        }
+    }
+}

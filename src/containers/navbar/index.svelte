@@ -56,7 +56,7 @@
 		</div>
 		<div class="navbar-item has-dropdown is-hoverable">
 			<a class="navbar-link">Catalog</a>
-            <div class="navbar-dropdown">
+            <div class="navbar-dropdown ">
 				<div class="navbar-item nav-catalog">
 					<Link to="catalog/table">Table</Link>
 				</div>

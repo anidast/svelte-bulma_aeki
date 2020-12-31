@@ -43,7 +43,7 @@
               </div>
               <div class="card-content">
                 <div class="content product_text">
-                  <p class="title is-size-5 has-text-weight-bold mb-5">
+                  <p class="title is-size-5 has-text-weight-bold mb-4">
                     ${product.product_name}
                   </p>
                   <p class="subtitle">${
