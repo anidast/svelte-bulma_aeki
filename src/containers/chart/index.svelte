@@ -1,19 +1,19 @@
 <script>
     import { afterUpdate } from "svelte";
     import Highcharts from "highcharts";
-    
+
     export let products = [];
 
     let canvas;
     let name = [];
     let count = [];
 
-    products.forEach(product => {
-        name = [...name, product.product_name];
-        count = [...count, product.count];
-    });
-
     afterUpdate(() => {
+        products.forEach((product) => {
+            name = [...name, product.product_name];
+            count = [...count, product.count];
+        });
+
         Highcharts.chart(canvas, {
             chart: {
                 type: "column",

@@ -100,20 +100,20 @@
     // let products = [];
 
     // const getproduct = (async () => {
-    //     const response = await fetch(apiUrl + "/product/" + id, {
+    //     const response = await fetch(apiUrl + "product/" + id, {
     //         method: "GET",
     //     });
-    //     res = await response.json();
+    //     let res = await response.json();
     //     if (response.status == 200) {
     //         product = res.data;
     //     }
     // })();
 
     // const getproducts = (async () => {
-    //     const response = await fetch(apiUrl + "/" + product.product_category, {
+    //     const response = await fetch(apiUrl + product.product_category, {
     //         method: "GET",
     //     });
-    //     res = await response.json();
+    //     let res = await response.json();
     //     if (response.status == 200) {
     //         products = res.data;
     //     }
@@ -121,6 +121,10 @@
 </script>
 
 <Navbar />
+{#if product}
 <ProductDetail {product}/>
+{/if}
+{#if products}
 <ProductsSlider title={product.product_category} {products} />
+{/if}
 <Footer />

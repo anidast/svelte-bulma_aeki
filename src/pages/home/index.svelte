@@ -175,11 +175,11 @@
     //     const response = await fetch(apiUrl + "product", {
     //         method: "GET",
     //     });
-    //     res = await response.json();
+    //     let res = await response.json();
     //     if (response.status == 200) {
     //         products = res.data;
     //         let len = products.length;
-    //         for (i = len-6; i < len; i++){
+    //         for (var i = len-6; i < len; i++){
     //             latestProducts = [...latestProducts, products[i]];
     //         }
     //     }
@@ -189,7 +189,7 @@
     //     const response = await fetch(apiUrl + "product/sold", {
     //         method: "GET",
     //     });
-    //     res = await response.json();
+    //     let res = await response.json();
     //     if (response.status == 200) {
     //         bestSeller = res.data;
     //         bestSeller.forEach((bs) => {
@@ -210,7 +210,11 @@
 <Navbar />
 <Hero />
 <FeaturedCategory />
+{#if latestProducts}
 <ProductsList category="Latest Product" products={latestProducts} />
+{/if}
+{#if bestSeller}
 <Chart products={bestSeller} />
-<ProductsSlider title="Best Seller" products={bestSellerProducts} />
+<!-- <ProductsSlider title="Best Seller" products={bestSellerProducts} /> -->
+{/if}
 <Footer />
