@@ -9,10 +9,10 @@
 <footer class="footer has-background-info-dark">
 	<div class="container">
 		<div class="columns is-justify-content-center">
-		  <div class="column mr-5">
+		  <div class="column mr-5 mb-5">
 		  	<p class="title is-5 has-text-white has-text-weight-bold">Tentang AEKI</p>
 		  	<p class="subtitle has-text-white is-size-6 mt-5">Perusahaan Furniture yang menyediakan banyak produk lengkap perabotan rumah tangga</p>
-		  	<p class="subtitle has-text-white is-size-6">Jl Rungkut Asri Tengah No.5-7, Rungkut Kidul, Kec. Rungkut, Kota Surabaya, Jawa Timur 60295 (031) 8707329</p>
+		  	<p class="subtitle has-text-white is-size-6">Jl Rungkut Asri Tengah No.5-7, Rungkut Kidul, <br> Kota Surabaya, Jawa Timur 60295 <br>(031) 8707329</p>
 		  </div>
 		  <div class="column">
 		  	<p class="title is-5 has-text-white has-text-weight-bold">Kabar Terbaru</p>

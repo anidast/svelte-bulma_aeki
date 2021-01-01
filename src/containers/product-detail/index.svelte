@@ -21,13 +21,13 @@
 <section class="m-6">
     <div class="container">
         <div class="columns">
-            <div class="column is-half">
-                <figure class="image is-square px-6 mx-6">
+            <div class="column is-half foto-product" style="margin-top:70px;">
+                <figure class="image is-4by3 px-6 mx-4 mb-4" >
                     <img
                         src={product.product_photos[0].photo_url}
                         alt={product.product_name} />
                 </figure>
-                <div class="columns">
+                <div class="columns mx-1">
                     <div class="column">
                         <figure class="image is-square">
                             <img
