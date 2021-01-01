@@ -60,7 +60,7 @@
     ul.innerHTML = card;
     new Glide(".glide", {
       type: "carousel",
-      perView: 4,
+      perView: 5,
       autoplay: 6000,
     }).mount();
   });

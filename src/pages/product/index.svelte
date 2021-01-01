@@ -39,47 +39,56 @@
 
     let products = [
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
-                    photo_url: "image/chair2.png",
+                    photo_url: "http://localhost:5000/image/chair2.png",
                 },
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
-                    photo_url: "image/chair2.png",
+                    photo_url: "http://localhost:5000/image/chair2.png",
                 },
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
-                    photo_url: "image/chair2.png",
+                    photo_url: "http://localhost:5000/image/chair2.png",
                 },
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
-                    photo_url: "image/chair2.png",
+                    photo_url: "http://localhost:5000/image/chair2.png",
                 },
             ],
         },
         {
-            name: "Quart Bel Chair",
-            price: 345000,
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
             product_photos: [
                 {
-                    photo_url: "image/chair2.png",
+                    photo_url: "http://localhost:5000/image/chair2.png",
+                },
+            ],
+        },
+        {
+            product_name: "Quart Bel Chair",
+            product_price: 345000,
+            product_photos: [
+                {
+                    photo_url: "http://localhost:5000/image/chair2.png",
                 },
             ],
         },
