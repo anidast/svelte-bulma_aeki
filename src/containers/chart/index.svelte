@@ -8,12 +8,14 @@
     let name = [];
     let count = [];
 
-    products.forEach(product => {
+    
+
+    afterUpdate(() => {
+        products.forEach(product => {
         name = [...name, product.product_name];
         count = [...count, product.count];
     });
-
-    afterUpdate(() => {
+    
         Highcharts.chart(canvas, {
             chart: {
                 type: "column",
@@ -22,8 +24,8 @@
                 text: "Best Seller Products",
             },
             xAxis: {
-                categories: ["Apples", "Bananas", "Oranges"],
-                // categories: name,
+                // categories: ["Apples", "Bananas", "Oranges"],
+                categories: name,
             },
             yAxis: {
                 title: {
@@ -33,8 +35,8 @@
             series: [
                 {
                     name: "Product",
-                    data: [5, 7, 3],
-                    // data: count,
+                    // data: [5, 7, 3],
+                    data: count,
                 },
             ],
         });

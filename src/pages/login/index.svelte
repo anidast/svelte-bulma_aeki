@@ -9,26 +9,26 @@
   $: isEmpty = !username || !password;
 
   function login() {
-    // const pages = (async () => {
-    //   const response = await fetch(apiUrl + "user/login", {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //       username: username,
-    //       password: password,
-    //     }),
-    //   });
-    //   res = await response.json();
-    //   if (response.status == 200) {
-    //     $user.id = res.data.id;
-    //     $user.username = username;
-    //     $user.password = password;
-    //   }
-    // })();
+    const pages = (async () => {
+      const response = await fetch(apiUrl + "user/login", {
+        method: "POST",
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
+      });
+      let res = await response.json();
+      if (response.status == 200) {
+        $user.id = res.data.id;
+        $user.username = username;
+        $user.password = password;
+      }
+    })();
 
     //dummy
-    $user.id = 1;
-    $user.username = username;
-    $user.password = password;
+    // $user.id = 1;
+    // $user.username = username;
+    // $user.password = password;
     //end of dummy
   }
 </script>

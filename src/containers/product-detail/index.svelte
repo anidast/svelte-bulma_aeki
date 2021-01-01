@@ -24,11 +24,11 @@
             <div class="column is-half">
                 <figure class="image is-square px-6 mx-6">
                     <img
-                        src={product.product_photos[0].photo_url}
+                        src={"http://"+product.product_photos[0].photo_url}
                         alt={product.product_name} />
                 </figure>
                 <div class="columns">
-                    <div class="column">
+                    <!-- <div class="column">
                         <figure class="image is-square">
                             <img
                                 src={product.product_photos[1].photo_url}
@@ -48,7 +48,7 @@
                                 src={product.product_photos[3].photo_url}
                                 alt={product.product_name} />
                         </figure>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="column is-half pd">

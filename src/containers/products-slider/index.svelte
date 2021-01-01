@@ -38,7 +38,7 @@
             <div class="product_item">
               <div class="card-image">
                 <figure class="image is-4by5">
-                  <img src=${product.product_photos[0].photo_url} alt=${product.product_name} />
+                  <img src=${"http://"+product.product_photos[0].photo_url} alt=${product.product_name} />
                 </figure>
               </div>
               <div class="card-content">
