@@ -62,7 +62,7 @@
 
     // let products;
     // const getproducts = (async () => {
-    //     const response = await fetch(apiUrl + "/" + category, {
+    //     const response = await fetch(apiUrl + "/product/category/" + category, {
     //         method: "GET",
     //     });
     //     res = await response.json();
