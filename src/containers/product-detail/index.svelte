@@ -23,18 +23,18 @@
                     <div class="column is-one-third"></div>
                 </div>
             </div>
-            <div class="column is-half">
-                <p>H3 Quart Bel Chair</p>
-                <p>Rp. 345.000</p>
-                <p>Kategori : Kursi</p>
-                <p>Stok : 10 </p>
+            <div class="column is-half pd">
+                <p class="title is-size-4">Quart Bel Chair</p>
+                <p class="title is-size-5 price_text">Rp. 345.000</p>
+                <p class="mt-4 mb-2">Kategori<span class="cat_text">: Kursi</span></p>
+                <p>Stok<span class="cat_text" style="color:#676767!important;">: 10</span></p>
                 <hr>
-                <p>Rincian produk</p>
-                <table class="table is-striped">
+                <p class="mb-3">Rincian produk</p>
+                <table class="table is-striped" >
                     <tbody>
                         <tr>
                             <td>SKU</td>
-                            <td>504.105.37</td>
+                            <td class="tk">504.105.37</td>
                         </tr>
                         <tr>
                             <td>Fitur</td>
@@ -63,12 +63,12 @@
                     </tbody>
                 </table>
                 <hr>
-                <div class="button is-rounded">
-                    <p class="is-size-2" on:click={minus}>-</p>
-                    <input class="mx-4" bind:value={count}>
-                    <p class="is-size-3" on:click={plus}>+</p>
+                <div class="button is-rounded btn-count mr-3">
+                    <p class="is-size-3 count" on:click={minus}>-</p>
+                    <input class="mx-4 kotak-input" bind:value={count}>
+                    <p class="is-size-4 mt-1" on:click={plus}>+</p>
                 </div>
-                <button class="button is-link is-rounded">Add to cart</button>
+                <button class="button is-link is-rounded is-uppercase ac">Add to cart</button>
                 <hr>
             </div>
         </div>
