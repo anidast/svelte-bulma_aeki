@@ -62,10 +62,10 @@
 
     // let products;
     // const getproducts = (async () => {
-    //     const response = await fetch(apiUrl + "/product/category/" + category, {
+    //     const response = await fetch(apiUrl + "product/category/" + category, {
     //         method: "GET",
     //     });
-    //     res = await response.json();
+    //     let res = await response.json();
     //     if (response.status == 200) {
     //         products = res.data;
     //     }

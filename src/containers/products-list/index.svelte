@@ -38,7 +38,7 @@
       </div>
     </div>
   </div>
-
+{#if }
   <div class="columns is-multiline is-justify-content-center mt-2">
     {#each products as product}
       <Link to={'product/' + product.id}>
@@ -47,7 +47,7 @@
             <div class="card-image">
               <figure class="image is-4by5">
                 <img
-                  src={product.product_photos[0].photo_url}
+                  src={"http://" + product.product_photos[0].photo_url}
                   alt={product.product_name} />
               </figure>
             </div>
@@ -68,5 +68,6 @@
         </div>
       </Link>
     {/each}
-  </div>
+  </div>  
+  {/if}
 </section>

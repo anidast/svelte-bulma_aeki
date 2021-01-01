@@ -17,7 +17,7 @@
     //       password: password,
     //     }),
     //   });
-    //   res = await response.json();
+    //   let res = await response.json();
     //   if (response.status == 200) {
     //     $user.id = res.data.id;
     //     $user.username = username;
