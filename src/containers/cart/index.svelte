@@ -3,66 +3,66 @@
 	import { apiUrl, user } from "../../stores";
 	import { Link } from "svelte-routing";
 
-	// let id_products;
-	// let products = [];
-	// let itemPrice = [];
-	// let allPrice = 0;
-	// let id_cart;
-	// let count = [];
-	// const getproducts = (async () => {
-	// 	const response = await fetch(apiUrl + "cart/" + $user.id, {
-	// 		method: "GET",
-	// 	});
-	// 	let res = await response.json();
-	// 	if (response.status == 200) {
-	// 		id_products = res.data.products;
-	// 		id_cart = res.data.cart_id;
-	// 		id_products.forEach(product =>{
-	//			itemPrice = [...itemPrice, product.product_price * product.qty];
-	// 			allPrice += product.product_price * qty;
-	//			count = [...count, product.qty];
-	// 			const gbsp = (async () => {
-    //                 const response2 = await fetch(apiUrl + "product/" + product.product_id, {
-    //                     method: "GET",
-    //                 });
-    //                 let res2 = await response2.json();
-    //                 if (response.status == 200) {
-    //                     products = [...products, res2.data]
-    //                 }
-    //             })();
-	// 		});
-	// 	}
-	// })();
+	let id_products;
+	let products = [];
+	let itemPrice = [];
+	let allPrice = 0;
+	let id_cart;
+	let count = [];
+	const getproducts = (async () => {
+		const response = await fetch(apiUrl + "cart/" + $user.id, {
+			method: "GET",
+		});
+		let res = await response.json();
+		if (response.status == 200) {
+			id_products = res.data.products;
+			id_cart = res.data.cart_id;
+			id_products.forEach(product =>{
+				itemPrice = [...itemPrice, product.product_price * product.qty];
+				allPrice += product.product_price * qty;
+				count = [...count, product.qty];
+				const gbsp = (async () => {
+                    const response2 = await fetch(apiUrl + "product/" + product.product_id, {
+                        method: "GET",
+                    });
+                    let res2 = await response2.json();
+                    if (response.status == 200) {
+                        products = [...products, res2.data]
+                    }
+                })();
+			});
+		}
+	})();
 	
 	//dummy
-	let products = [
-		{
-			product_name: "Eames Replica Chair - Pink",
-			product_price: 120500,
-			product_category: "chair",
-			product_photos: [
-				{
-					photo_url: "localhost:5000/image/chair.png",
-				},
-			],
-			id: 12,
-		},
-		{
-			product_name: "Wood Chair",
-			product_price: 130000,
-			product_category: "chair",
-			product_photos: [
-				{
-					photo_url: "localhost:5000/image/chair2.png",
-				},
-			],
-			id: 12,
-		},
-	];
+	// let products = [
+	// 	{
+	// 		product_name: "Eames Replica Chair - Pink",
+	// 		product_price: 120500,
+	// 		product_category: "chair",
+	// 		product_photos: [
+	// 			{
+	// 				photo_url: "localhost:5000/image/chair.png",
+	// 			},
+	// 		],
+	// 		id: 12,
+	// 	},
+	// 	{
+	// 		product_name: "Wood Chair",
+	// 		product_price: 130000,
+	// 		product_category: "chair",
+	// 		product_photos: [
+	// 			{
+	// 				photo_url: "localhost:5000/image/chair2.png",
+	// 			},
+	// 		],
+	// 		id: 12,
+	// 	},
+	// ];
 
-	let itemPrice = [120500, 130000];
-	let allPrice = 250500;
-	let count = [1, 1];
+	// let itemPrice = [120500, 130000];
+	// let allPrice = 250500;
+	// let count = [1, 1];
 	//end of dummy
 
 	function minus(i, id, price) {

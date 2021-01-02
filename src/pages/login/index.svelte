@@ -9,30 +9,30 @@
   $: isEmpty = !username || !password;
 
   function login() {
-    const pages = (async () => {
-      const response = await fetch(apiUrl + "user/login", {
-        method: "POST",
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        }),
-      });
-      let res = await response.json();
-      if (response.status == 200) {
-        $user.id = res.data.id;
-        $user.username = username;
-        $user.password = password;
-        const getcart = (async () => {
-          const response = await fetch(apiUrl + "cart/" + $user.id, {
-            method: "GET",
-          });
-          let res = await response.json();
-          if (response.status == 200) {
-            $cart_id = res.data.cart_id;
-          }
-        })();
-      }
-    })();
+    // const pages = (async () => {
+    //   const response = await fetch(apiUrl + "user/login", {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //       username: username,
+    //       password: password,
+    //     }),
+    //   });
+    //   let res = await response.json();
+    //   if (response.status == 200) {
+    //     $user.id = res.data.id;
+    //     $user.username = username;
+    //     $user.password = password;
+    //     const getcart = (async () => {
+    //       const response = await fetch(apiUrl + "cart/" + $user.id, {
+    //         method: "GET",
+    //       });
+    //       let res = await response.json();
+    //       if (response.status == 200) {
+    //         $cart_id = res.data.cart_id;
+    //       }
+    //     })();
+    //   }
+    // })();
 
     //dummy
     $user.id = 1;

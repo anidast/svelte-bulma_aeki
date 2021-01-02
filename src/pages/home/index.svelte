@@ -203,6 +203,6 @@
 {/if}
 {#if bestSeller}
 <Chart products={bestSeller} />
-<ProductsSlider title="Best Seller" cat={"best"} />
+<!-- <ProductsSlider title="Best Seller" cat={"best"} /> -->
 {/if}
 <Footer />
