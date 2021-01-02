@@ -35,7 +35,7 @@
       body: JSON.stringify({
         cart_id: $cart_id,
         product_id: id,
-        quantity: 1,
+        quantity: count,
       }),
     });
     res = response.json();
