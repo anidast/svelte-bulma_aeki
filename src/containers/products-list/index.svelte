@@ -38,36 +38,39 @@
       </div>
     </div>
   </div>
-{#if }
-  <div class="columns is-multiline is-justify-content-center mt-2">
-    {#each products as product}
-      <Link to={'product/' + product.id}>
-        <div class="column">
-          <div class="product_item">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img
+  {#if products}
+    <div class="columns is-multiline is-justify-content-center mt-2">
+      {#each products as product}
+        <div class="column is-one-fifth">
+          <Link to={'product/' + product.id}>
+            <div class="product_item">
+              <div class="card-image">
+                <figure class="image is-4by5">
+                  <!-- <img
                   src={"http://" + product.product_photos[0].photo_url}
-                  alt={product.product_name} />
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="content product_text">
-                <p class="title is-size-5 has-text-weight-bold mb-4">
-                  {product.product_name}
-                </p>
-                <p class="subtitle">
-                  {'Rp. ' + formatRupiah(product.product_price)}
-                </p>
-                <p class="text-chart" on:click={addToCart(product.id)}>
-                  + ADD TO CHART
-                </p>
+                  alt={product.product_name} /> -->
+                  <img
+                    src={'http://localhost:5000/' + product.product_photos[0].photo_url}
+                    alt={product.product_name} />
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content product_text">
+                  <p class="title is-size-5 has-text-weight-bold mb-4">
+                    {product.product_name}
+                  </p>
+                  <p class="subtitle">
+                    {'Rp. ' + formatRupiah(product.product_price)}
+                  </p>
+                  <p class="text-chart" on:click={addToCart(product.id)}>
+                    + ADD TO CHART
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
-      </Link>
-    {/each}
-  </div>  
+      {/each}
+    </div>
   {/if}
 </section>
