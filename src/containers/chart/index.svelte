@@ -22,7 +22,6 @@
                 text: "Best Seller Products",
             },
             xAxis: {
-                // categories: ["Apples", "Bananas", "Oranges"],
                 categories: name,
             },
             yAxis: {
@@ -33,7 +32,6 @@
             series: [
                 {
                     name: "Product",
-                    // data: [5, 7, 3],
                     data: count,
                 },
             ],

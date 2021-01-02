@@ -39,12 +39,13 @@
 		const invoice = (async () => {
 			const response = await fetch(apiUrl + "order/" + $user.id, {
 				method: "POST",
+				responseType: 'blob',
 				body: JSON.stringify(co),
 			})
 			.then(response => {
 				if (response.status == 200) {
 				const downloadUrl = window.URL.createObjectURL(
-					new Blob([res.data])
+					new Blob([response])
 				);
 				const link = document.createElement("a");
 				link.href = downloadUrl;

@@ -187,7 +187,6 @@
     const getbestseller = (async () => {
         const response = await fetch(apiUrl + "product/sold", {
             method: "GET",
-            responseType: 'blob',
         });
         let res = await response.json();
         if (response.status == 200) {
