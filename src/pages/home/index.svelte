@@ -194,7 +194,7 @@
     //         bestSeller = res.data;
     //         bestSeller.forEach((bs) => {
     //             const gbsp = (async () => {
-    //                 const response = await fetch(apiUrl + "product/" + bs.id, {
+    //                 const response = await fetch(apiUrl + "product/" + bs.product_id, {
     //                     method: "GET",
     //                 });
     //                 let res = await response.json();

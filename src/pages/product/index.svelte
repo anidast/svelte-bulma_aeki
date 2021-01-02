@@ -95,8 +95,8 @@
     ];
     //end of dummy
 
-    // export let id;
-    // let product;
+    export let id;
+    // let product = {};
     // let products = [];
 
     // const getproduct = (async () => {
@@ -110,19 +110,19 @@
     // })();
 
     // const getproducts = (async () => {
-    //     const response = await fetch(apiUrl + product.product_category, {
+    //     const response = await fetch(apiUrl + "product/category/" + product.product_category, {
     //         method: "GET",
     //     });
     //     let res = await response.json();
     //     if (response.status == 200) {
-    //         products = res.data;
+    //         products = res.data.product;
     //     }
     // })();
 </script>
 
 <Navbar />
 {#if product}
-<ProductDetail {product}/>
+<ProductDetail {id}/>
 {/if}
 {#if products}
 <ProductsSlider title={product.product_category} {products} />

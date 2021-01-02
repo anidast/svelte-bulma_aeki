@@ -67,12 +67,14 @@
     //     });
     //     let res = await response.json();
     //     if (response.status == 200) {
-    //         products = res.data;
+    //         products = res.data.products;
     //     }
     // })();
 </script>
 
 <Navbar />
 <Promo />
+{#if products}
 <ProductsList {category} {products}/>
+{/if}
 <Footer />
