@@ -18,8 +18,8 @@
 	// 		id_products = res.data.products;
 	// 		id_cart = res.data.cart_id;
 	// 		id_products.forEach(product =>{
-	//			itemPrice = [...itemPrice, product.product_price];
-	// 			allPrice += product.product_price;
+	//			itemPrice = [...itemPrice, product.product_price * qty];
+	// 			allPrice += product.product_price * qty;
 	//			count = [...count, product.qty];
 	// 			const gbsp = (async () => {
     //                 const response2 = await fetch(apiUrl + "product/" + product.product_id, {
