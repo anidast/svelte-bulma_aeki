@@ -75,7 +75,7 @@
 				body: JSON.stringify({
 					cart_id: id_cart,
 					product_id: id,
-					quantity: count[i],
+					quantity: 1,
 				}),
 			});
 			console.log(response);
@@ -92,7 +92,7 @@
 				body: JSON.stringify({
 					cart_id: id_cart,
 					product_id: id,
-					quantity: count[i],
+					quantity: 1,
 				}),
 			});
 			console.log(response);
@@ -158,12 +158,12 @@
 										<div class="column">
 											<div
 												class=" mt-3 is-size-6"
-												on:click={() => plus(i, product.product_id, product.product_price)}>
+												on:click={() => plus(i, product.id, product.product_price)}>
 												<a>+</a>
 											</div>
 											<div
 												class=" tanda-minus is-size-5"
-												on:click={() => minus(i, product.product_id, product.product_price)}>
+												on:click={() => minus(i, product.id, product.product_price)}>
 												<a>-</a>
 											</div>
 										</div>

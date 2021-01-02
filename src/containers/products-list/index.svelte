@@ -1,6 +1,7 @@
 <script>
   import "./index.scss";
   import { Link } from "svelte-routing";
+  import { cart_id } from "../../stores";
 
   export let category;
   export let products;
@@ -13,6 +14,7 @@
     const response = fetch(apiUrl + "/cart/add", {
       method: "POST",
       body: JSON.stringify({
+        cart_id: $cart_id,
         product_id: id,
         quantity: 1,
       }),

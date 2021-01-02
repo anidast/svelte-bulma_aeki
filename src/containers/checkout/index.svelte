@@ -21,27 +21,29 @@
 	};
 
 	const getcart = (async () => {
-      const response = await fetch(apiUrl + "cart/" + user.id, {
-        method: "GET"
-      });
-      let res = await response.json();
-      if (response.status == 200) {
-		  co.cart_id = res.data.cart_id;
-		  products = res.data.products;
-		  products.forEach(product => {
-			  totalPrice += product.product_price * qty;
-		  });
-		  co.order_fee = totalPrice + 19000;
-      }
+		const response = await fetch(apiUrl + "cart/" + $user.id, {
+			method: "GET",
+		});
+		let res = await response.json();
+		if (response.status == 200) {
+			co.cart_id = res.data.cart_id;
+			products = res.data.products;
+			products.forEach((product) => {
+				totalPrice += product.product_price * product.qty;
+			});
+			co.order_fee = totalPrice + 19000;
+		}
 	})();
-	
-	function cetakInvoice(){
-		const response = fetch(apiUrl + "cart/" + user.id, {
-		method: "POST",
-		body: JSON.stringify(co)
-      });
-      let res = response.json();
-      console.log(res);
+
+	function cetakInvoice() {
+		const invoice = (async () => {
+			const response = fetch(apiUrl + "order/" + $user.id, {
+				method: "POST",
+				body: JSON.stringify(co),
+			});
+			let res = response.json();
+			console.log(res);
+		})();
 	}
 </script>
 
@@ -86,10 +88,18 @@
 							<div class="control">
 								<div class="select">
 									<select bind:value={co.order_delivery}>
-										<option>JNE Express</option>
-										<option>J&T Express</option>
-										<option>Si Cepat</option>
-										<option>ID Express</option>
+										<option value="JNE Express">
+											JNE Express
+										</option>
+										<option value="J&T Express">
+											J&T Express
+										</option>
+										<option value="Si Cepat">
+											Si Cepat
+										</option>
+										<option value="ID Express">
+											ID Express
+										</option>
 									</select>
 								</div>
 							</div>
@@ -99,10 +109,18 @@
 							<div class="control">
 								<div class="select">
 									<select bind:value={co.order_payment}>
-										<option>Bank Mandiri</option>
-										<option>Bank BNI</option>
-										<option>Bank BCA</option>
-										<option>Bank BRI</option>
+										<option value="Bank Mandiri">
+											Bank Mandiri
+										</option>
+										<option value="Bank BNI">
+											Bank BNI
+										</option>
+										<option value="Bank BCA">
+											Bank BCA
+										</option>
+										<option value="Bank BRI">
+											Bank BRI
+										</option>
 									</select>
 								</div>
 							</div>
@@ -130,17 +148,19 @@
 							</thead>
 							<tbody class="has-text-grey font-th">
 								{#each products as product}
-								<tr>
-									<td>{product.product_name}</td>
-									<td class="has-text-right">{"Rp. " + formatRupiah(product.product_price * product.qty)}</td>
-								</tr>
+									<tr>
+										<td>{product.product_name}</td>
+										<td class="has-text-right">
+											{'Rp. ' + formatRupiah(product.product_price * product.qty)}
+										</td>
+									</tr>
 								{/each}
 							</tbody>
 							<tfoot>
 								<tr class="font-tfoot">
 									<td>SUBTOTAL</td>
 									<td class="has-text-grey has-text-right">
-										{"Rp. " + formatRupiah(totalPrice)}
+										{'Rp. ' + formatRupiah(totalPrice)}
 									</td>
 								</tr>
 								<tr class="font-tfoot">
@@ -152,7 +172,7 @@
 								<tr class="font-tfoot">
 									<td>TOTAL</td>
 									<td class="has-text-grey has-text-right">
-										{"Rp. " + formatRupiah(totalPrice + 19000)}
+										{'Rp. ' + formatRupiah(totalPrice + 19000)}
 									</td>
 								</tr>
 							</tfoot>

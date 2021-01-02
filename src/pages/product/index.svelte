@@ -125,6 +125,6 @@
 <ProductDetail {id}/>
 {/if}
 {#if products}
-<ProductsSlider title={product.product_category} {products} />
+<ProductsSlider title={product.product_category} cat={product.product_category} />
 {/if}
 <Footer />

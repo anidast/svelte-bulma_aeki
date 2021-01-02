@@ -1,5 +1,6 @@
 <script>
     import "./index.scss";
+    import { apiUrl, cart_id } from "../../stores";
 
     export let id;
     let product;
@@ -27,6 +28,19 @@
     function plus() {
         count += 1;
     }
+
+    function addToCart(id) {
+    const response = fetch(apiUrl + "/cart/add", {
+      method: "POST",
+      body: JSON.stringify({
+        cart_id: $cart_id,
+        product_id: id,
+        quantity: 1,
+      }),
+    });
+    res = response.json();
+    console.log(res);
+  }
 </script>
 
 <section class="m-6">
@@ -115,6 +129,7 @@
                         <p class="is-size-4 mt-1" on:click={plus}>+</p>
                     </div>
                     <button
+                        on:click={addToCart}
                         class="button is-link is-rounded is-uppercase ac">Add to
                         cart</button>
                     <hr />
