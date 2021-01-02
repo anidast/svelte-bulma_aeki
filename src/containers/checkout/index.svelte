@@ -36,24 +36,23 @@
 	})();
 
 	function cetakInvoice() {
-		const invoice = (async () => {
-			const response = await fetch(apiUrl + "order/" + $user.id, {
+		const invoice = ( () => {
+			const response =  fetch(apiUrl + "order/" + $user.id, {
 				method: "POST",
-				responseType: 'blob',
+				responseType: "blob",
 				body: JSON.stringify(co),
-			})
-			.then(response => {
+			}).then((response) => {
 				if (response.status == 200) {
-				const downloadUrl = window.URL.createObjectURL(
-					new Blob([response])
-				);
-				const link = document.createElement("a");
-				link.href = downloadUrl;
-				link.setAttribute("download", "Invoice.pdf");
-				document.body.appendChild(link);
-				link.click();
-				link.remove();
-			}
+					const downloadUrl = window.URL.createObjectURL(
+						new Blob([response])
+					);
+					const link = document.createElement("a");
+					link.href = downloadUrl;
+					link.setAttribute("download", "Invoice.pdf");
+					document.body.appendChild(link);
+					link.click();
+					link.remove();
+				}
 			});
 		})();
 	}
