@@ -3,7 +3,7 @@
 	import { apiUrl, user } from "../../stores";
 	import { Link } from "svelte-routing";
 
-	let id_products;
+	let products2;
 	let products = [];
 	let itemPrice = [];
 	let allPrice = 0;
@@ -15,14 +15,14 @@
 		});
 		let res = await response.json();
 		if (response.status == 200) {
-			id_products = res.data.products;
+			products2 = res.data.products;
 			id_cart = res.data.cart_id;
-			id_products.forEach(product =>{
+			products2.forEach(product =>{
 				itemPrice = [...itemPrice, product.product_price * product.qty];
-				allPrice += product.product_price * qty;
+				allPrice += product.product_price * product.qty;
 				count = [...count, product.qty];
 				const gbsp = (async () => {
-                    const response2 = await fetch(apiUrl + "product/" + product.product_id, {
+                    const response2 = await fetch(apiUrl + "product/" + product.id, {
                         method: "GET",
                     });
                     let res2 = await response2.json();

@@ -37,11 +37,22 @@
 
 	function cetakInvoice() {
 		const invoice = (async () => {
-			const response = fetch(apiUrl + "order/" + $user.id, {
+			const response = await fetch(apiUrl + "order/" + $user.id, {
 				method: "POST",
 				body: JSON.stringify(co),
 			});
-			let res = response.json();
+			let res = await response.json();
+			if (response.status == 200) {
+				const downloadUrl = window.URL.createObjectURL(
+					new Blob([res.data])
+				);
+				const link = document.createElement("a");
+				link.href = downloadUrl;
+				link.setAttribute("download", "Invoice.pdf");
+				document.body.appendChild(link);
+				link.click();
+				link.remove();
+			}
 			console.log(res);
 		})();
 	}
