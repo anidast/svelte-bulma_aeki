@@ -8,123 +8,36 @@
     } from "../../containers";
     import { apiUrl } from "../../stores";
 
-    //dummy
-    let product = {
-        product_name: "kursi",
-        product_description: "sebuah kursi",
-        product_price: 120500,
-        product_vendor: "Mebel International",
-        product_category: "chair",
-        product_durability: "Tahan 10Kg",
-        product_width: 60,
-        product_color: "Merah",
-        product_material: "plastic",
-        product_height: 120,
-        product_photos: [
-            {
-                photo_url: "http://localhost:5000/image/chair2.png",
-            },
-            {
-                photo_url: "http://localhost:5000/image/chair2.png",
-            },
-            {
-                photo_url: "http://localhost:5000/image/chair2.png",
-            },
-            {
-                photo_url: "http://localhost:5000/image/chair2.png",
-            },
-        ],
-        id: 12,
-    };
+    export let id;
+    let product = {};
+    let products = [];
 
-    let products = [
-        {
-            product_name: "Quart Bel Chair",
-            product_price: 345000,
-            product_photos: [
-                {
-                    photo_url: "http://localhost:5000/image/chair2.png",
-                },
-            ],
-        },
-        {
-            product_name: "Quart Bel Chair",
-            product_price: 345000,
-            product_photos: [
-                {
-                    photo_url: "http://localhost:5000/image/chair2.png",
-                },
-            ],
-        },
-        {
-            product_name: "Quart Bel Chair",
-            product_price: 345000,
-            product_photos: [
-                {
-                    photo_url: "http://localhost:5000/image/chair2.png",
-                },
-            ],
-        },
-        {
-            product_name: "Quart Bel Chair",
-            product_price: 345000,
-            product_photos: [
-                {
-                    photo_url: "http://localhost:5000/image/chair2.png",
-                },
-            ],
-        },
-        {
-            product_name: "Quart Bel Chair",
-            product_price: 345000,
-            product_photos: [
-                {
-                    photo_url: "http://localhost:5000/image/chair2.png",
-                },
-            ],
-        },
-        {
-            product_name: "Quart Bel Chair",
-            product_price: 345000,
-            product_photos: [
-                {
-                    photo_url: "http://localhost:5000/image/chair2.png",
-                },
-            ],
-        },
-    ];
-    //end of dummy
-
-    // export let id;
-    // let product;
-    // let products = [];
-
-    // const getproduct = (async () => {
-    //     const response = await fetch(apiUrl + "product/" + id, {
-    //         method: "GET",
-    //     });
-    //     let res = await response.json();
-    //     if (response.status == 200) {
-    //         product = res.data;
-    //     }
-    // })();
+    const getproduct = (async () => {
+        const response = await fetch(apiUrl + "product/" + id, {
+            method: "GET",
+        });
+        let res = await response.json();
+        if (response.status == 200) {
+            product = res.data;
+        }
+    })();
 
     // const getproducts = (async () => {
-    //     const response = await fetch(apiUrl + product.product_category, {
+    //     const response = await fetch(apiUrl + "product/category/" + product.product_category, {
     //         method: "GET",
     //     });
     //     let res = await response.json();
     //     if (response.status == 200) {
-    //         products = res.data;
+    //         products = res.data.product;
     //     }
     // })();
 </script>
 
 <Navbar />
 {#if product}
-<ProductDetail {product}/>
+<ProductDetail {id}/>
 {/if}
-{#if products}
-<ProductsSlider title={product.product_category} {products} />
-{/if}
+<!-- {#if products}
+<ProductsSlider title={product.product_category} cat={product.product_category} />
+{/if} -->
 <Footer />

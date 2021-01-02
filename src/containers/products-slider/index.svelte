@@ -4,26 +4,63 @@
   import { onMount } from "svelte";
   import Glide from "@glidejs/glide";
 
-  export let products = [];
   export let title;
+  export let cat;
 
   const formatRupiah = (money) => {
     return new Intl.NumberFormat("id-ID").format(money);
   };
 
   function addToCart(id) {
-    const response = fetch(apiUrl + "/cart/add" , {
+    const response = fetch(apiUrl + "/cart/add", {
       method: "POST",
       body: JSON.stringify({
         product_id: id,
         quantity: 1,
-      })
+      }),
     });
     res = response.json();
     console.log(res);
   }
 
   onMount(async () => {
+    let products = [];
+    if (cat === "best") {
+      let bestSeller;
+      const getbestseller = (async () => {
+        const response = await fetch(apiUrl + "product/sold", {
+          method: "GET",
+        });
+        let res = await response.json();
+        if (response.status == 200) {
+          bestSeller = res.data;
+          bestSeller.forEach((bs) => {
+            const gbsp = (async () => {
+              const response = await fetch(
+                apiUrl + "product/" + bs.product_id,
+                {
+                  method: "GET",
+                }
+              );
+              let res = await response.json();
+              if (response.status == 200) {
+                products = [...products, res.data];
+              }
+            })();
+          });
+        }
+      })();
+    } else {
+      const getproducts = (async () => {
+        const response = await fetch(apiUrl + "product/category/" + cat, {
+          method: "GET",
+        });
+        let res = await response.json();
+        if (response.status == 200) {
+          products = res.data.product;
+        }
+      })();
+    }
     let ul = document.querySelector(".glide__slides");
     let card = "";
 
@@ -33,12 +70,14 @@
     products.forEach((product) => {
       card += `
       <li class="glide__slide">
-        <Link to=${'product/' + product.id}>
+        <Link to=${"product/" + product.id}>
           <div class="column">
             <div class="product_item">
               <div class="card-image">
                 <figure class="image is-4by5">
-                  <img src=${"http://" + product.product_photos[0].photo_url} alt=${product.product_name} />
+                  <img src=${
+                    "http://" + product.product_photos[0].photo_url
+                  } alt=${product.product_name} />
                 </figure>
               </div>
               <div class="card-content">

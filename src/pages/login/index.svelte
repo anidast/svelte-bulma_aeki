@@ -1,7 +1,7 @@
 <script>
   import "./index.scss";
   import { Link } from "svelte-routing";
-  import { apiUrl, user } from "../../stores";
+  import { apiUrl, user, cart_id } from "../../stores";
 
   let username;
   let password;
@@ -22,6 +22,15 @@
     //     $user.id = res.data.id;
     //     $user.username = username;
     //     $user.password = password;
+    //     const getcart = (async () => {
+    //       const response = await fetch(apiUrl + "cart/" + $user.id, {
+    //         method: "GET",
+    //       });
+    //       let res = await response.json();
+    //       if (response.status == 200) {
+    //         $cart_id = res.data.cart_id;
+    //       }
+    //     })();
     //   }
     // })();
 
@@ -78,7 +87,9 @@
 
               <p class="text-bawah">
                 Belum punya akun ?
-                <Link to="register"><span class="has-text-link">Daftar Member</span></Link>
+                <Link to="register">
+                  <span class="has-text-link">Daftar Member</span>
+                </Link>
               </p>
             </div>
           </div>

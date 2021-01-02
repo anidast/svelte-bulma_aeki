@@ -1,6 +1,7 @@
 <script>
   import "./index.scss";
   import { Link } from "svelte-routing";
+  import { cart_id } from "../../stores";
 
   export let category;
   export let products;
@@ -13,6 +14,7 @@
     const response = fetch(apiUrl + "/cart/add", {
       method: "POST",
       body: JSON.stringify({
+        cart_id: $cart_id,
         product_id: id,
         quantity: 1,
       }),
@@ -46,12 +48,9 @@
             <div class="product_item">
               <div class="card-image">
                 <figure class="image is-4by5">
-                  <!-- <img
-                  src={"http://" + product.product_photos[0].photo_url}
-                  alt={product.product_name} /> -->
                   <img
-                    src={'http://localhost:5000/' + product.product_photos[0].photo_url}
-                    alt={product.product_name} />
+                  src={"http://" + product.product_photos[0].photo_url}
+                  alt={product.product_name} />
                 </figure>
               </div>
               <div class="card-content">
