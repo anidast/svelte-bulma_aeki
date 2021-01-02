@@ -3,68 +3,105 @@
 	import { apiUrl, user } from "../../stores";
 	import { Link } from "svelte-routing";
 
-	//dummy
-	let products=[{
-        product_name: "Eames Replica Chair - Pink",
-        product_price: 120500,
-        product_category: "chair",
-        product_photos: [
-            {
-                photo_url: "localhost:5000/image/chair.png",
-            }
-        ],
-        id: 12,
-	},
-	{
-        product_name: "Wood Chair",
-        product_price: 130000,
-        product_category: "chair",
-        product_photos: [
-            {
-                photo_url: "localhost:5000/image/chair2.png",
-            }
-        ],
-        id: 12,
-	}];
-	
-	let totalPrice = 0;
-	let count = [];
-	products.forEach(product =>{
-		totalPrice += product.product_price;
-		count = [...count, 1];
-	});
-	//end of dummy
-
-	// let count = 1;
-
-	function minus(i, price) {
-		count[i] -= 1;
-		totalPrice -= price;
-	}
-
-	function plus(i, price) {
-		count[i] += 1;
-		totalPrice += price;
-	}
-
-	const formatRupiah = (money) => {
-		return new Intl.NumberFormat("id-ID").format(money);
-	};
-
-	// let products;
-	// let totalPrice = 0;
+	// let id_products;
+	// let products = [];
+	// let itemPrice = [];
+	// let allPrice = 0;
+	// let id_cart;
+	// let count = [];
 	// const getproducts = (async () => {
 	// 	const response = await fetch(apiUrl + "cart/" + $user.id, {
 	// 		method: "GET",
 	// 	});
 	// 	let res = await response.json();
 	// 	if (response.status == 200) {
-	// 		products = res.data;
-	// 		products.forEach(product =>{
-	// 			totalPrice += product.product_price;
+	// 		id_products = res.data.products;
+	// 		id_cart = res.data.cart_id;
+	// 		id_products.forEach(product =>{
+	//			itemPrice = [...itemPrice, product.product_price];
+	// 			allPrice += product.product_price;
+	//			count = [...count, product.qty];
+	// 			const gbsp = (async () => {
+    //                 const response2 = await fetch(apiUrl + "product/" + product.product_id, {
+    //                     method: "GET",
+    //                 });
+    //                 let res2 = await response2.json();
+    //                 if (response.status == 200) {
+    //                     products = [...products, res2.data]
+    //                 }
+    //             })();
 	// 		});
 	// 	}
 	// })();
+	
+	//dummy
+	let products = [
+		{
+			product_name: "Eames Replica Chair - Pink",
+			product_price: 120500,
+			product_category: "chair",
+			product_photos: [
+				{
+					photo_url: "localhost:5000/image/chair.png",
+				},
+			],
+			id: 12,
+		},
+		{
+			product_name: "Wood Chair",
+			product_price: 130000,
+			product_category: "chair",
+			product_photos: [
+				{
+					photo_url: "localhost:5000/image/chair2.png",
+				},
+			],
+			id: 12,
+		},
+	];
+
+	let itemPrice = [120500, 130000];
+	let allPrice = 250500;
+	let count = [1, 1];
+	//end of dummy
+
+	function minus(i, id, price) {
+		count[i] -= 1;
+		itemPrice[i] -= price;
+		allPrice -= price;
+		const minus = (async () => {
+			const response = fetch(apiUrl + "cart/delete", {
+				method: "DELETE",
+				body: JSON.stringify({
+					cart_id: id_cart,
+					product_id: id,
+					quantity: count[i],
+				}),
+			});
+			console.log(response);
+		})();
+	}
+
+	function plus(i, id, price) {
+		count[i] += 1;
+		itemPrice[i] += price;
+		allPrice += price;
+		const plus = (async () => {
+			const response = fetch(apiUrl + "cart/add", {
+				method: "POST",
+				body: JSON.stringify({
+					cart_id: id_cart,
+					product_id: id,
+					quantity: count[i],
+				}),
+			});
+			console.log(response);
+		})();
+	}
+
+	const formatRupiah = (money) => {
+		return new Intl.NumberFormat("id-ID").format(money);
+	};
 </script>
 
 <section class="section">
@@ -121,12 +158,12 @@
 										<div class="column">
 											<div
 												class=" mt-3 is-size-6"
-												on:click={() => plus(i, product.product_price)}>
+												on:click={() => plus(i, product.product_id, product.product_price)}>
 												<a>+</a>
 											</div>
 											<div
 												class=" tanda-minus is-size-5"
-												on:click={() => minus(i, product.product_price)}>
+												on:click={() => minus(i, product.product_id, product.product_price)}>
 												<a>-</a>
 											</div>
 										</div>
@@ -135,7 +172,7 @@
 							</td>
 							<td>
 								<p class="mt-5 has-text-centered">
-									{'Rp. ' + formatRupiah(product.product_price * count[i])}
+									{'Rp. ' + formatRupiah(itemPrice[i])}
 								</p>
 							</td>
 						</tr>
@@ -150,7 +187,7 @@
 						</td>
 						<td
 							class="has-text-info has-text-weight-bold has-text-centered">
-							{'Rp. ' + formatRupiah(totalPrice)}
+							{'Rp. ' + formatRupiah(allPrice)}
 						</td>
 					</tr>
 					<tr>
@@ -159,10 +196,11 @@
 						<td />
 						<td>
 							<div class="has-text-centered">
-								<Link to="checkout"><button
-									class="button is-rounded is-link is-uppercase btn-ck mt-4">Checkout</button>
+								<Link to="checkout">
+									<button
+										class="button is-rounded is-link is-uppercase btn-ck mt-4">Checkout</button>
 								</Link>
-						</div>
+							</div>
 						</td>
 					</tr>
 				</tfoot>

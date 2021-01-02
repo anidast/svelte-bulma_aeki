@@ -197,7 +197,7 @@
     //                 const response = await fetch(apiUrl + "product/" + bs.id, {
     //                     method: "GET",
     //                 });
-    //                 res = await response.json();
+    //                 let res = await response.json();
     //                 if (response.status == 200) {
     //                     bestSellerProducts = [...bestSellerProducts, res.data]
     //                 }
