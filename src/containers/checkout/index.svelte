@@ -1,37 +1,91 @@
 <script>
 	import "./index.scss";
+	import { apiUrl, user } from "../../stores";
+
+	$: isEmpty = !co;
+
+	let products = [];
+	let totalPrice = 0;
+	let co = {
+		cart_id: null,
+		order_name: null,
+		order_phone: null,
+		order_address: null,
+		order_payment: null,
+		order_delivery: null,
+		order_fee: null,
+	};
+
+	const formatRupiah = (money) => {
+		return new Intl.NumberFormat("id-ID").format(money);
+	};
+
+	const getcart = (async () => {
+      const response = await fetch(apiUrl + "cart/" + user.id, {
+        method: "GET"
+      });
+      let res = await response.json();
+      if (response.status == 200) {
+		  co.cart_id = res.data.cart_id;
+		  products = res.data.products;
+		  products.forEach(product => {
+			  totalPrice += product.product_price * qty;
+		  });
+		  co.order_fee = totalPrice + 19000;
+      }
+	})();
+	
+	function cetakInvoice(){
+		const response = fetch(apiUrl + "cart/" + user.id, {
+		method: "POST",
+		body: JSON.stringify(co)
+      });
+      let res = response.json();
+      console.log(res);
+	}
 </script>
 
 <section class="section">
 	<div class="hero-body">
-		<p class="has-text-weight-bold is-size-3">Checkout</p> 
-		<hr>
+		<p class="has-text-weight-bold is-size-3">Checkout</p>
+		<hr />
 		<div class="columns">
 			<div class="column is-half">
 				<div class="">
 					<div class="card-content">
 						<label class="label is-size-5">Alamat Pengiriman</label>
-						<hr>
+						<hr />
 						<div class="field">
 							<div class="control">
-								<input class="input" type="text" placeholder="Masukkan Nama Lengkap">
+								<input
+									class="input"
+									bind:value={co.order_name}
+									type="text"
+									placeholder="Masukkan Nama Lengkap" />
 							</div>
 						</div>
 						<div class="field">
 							<div class="control">
-								<input class="input" type="text" placeholder="Masukkan Nomor Telepon">
+								<input
+									class="input"
+									bind:value={co.order_phone}
+									type="text"
+									placeholder="Masukkan Nomor Telepon" />
 							</div>
 						</div>
 						<div class="field">
 							<div class="control">
-								<textarea class="textarea" placeholder="Masukkan Alamat Lengkap"></textarea>
+								<textarea
+									class="textarea"
+									bind:value={co.order_address}
+									placeholder="Masukkan Alamat Lengkap" />
 							</div>
 						</div>
 						<div class="field mt-5">
 							<label class="label is-size-5">Opsi Pengiriman</label>
 							<div class="control">
 								<div class="select">
-									<select>
+									<select bind:value={co.order_delivery}>
 										<option>JNE Express</option>
 										<option>J&T Express</option>
 										<option>Si Cepat</option>
@@ -44,7 +98,7 @@
 							<label class="label is-size-5">Metode Pembayaran</label>
 							<div class="control">
 								<div class="select">
-									<select>
+									<select bind:value={co.order_payment}>
 										<option>Bank Mandiri</option>
 										<option>Bank BNI</option>
 										<option>Bank BCA</option>
@@ -60,45 +114,54 @@
 				<div class="card has-background-primary-light px-4 pt-2">
 					<div class="card-content is-size-5">
 						<p class="has-text-weight-bold">Pesanan Anda</p>
-						<div class="hr-pesanan"></div>
-						<table class="table has-background-primary-light is-fullwidth">
-						  <thead>
-						    <tr>
-						      <th class="has-text-grey font-th">Produk</th>
-						      <th class="has-text-grey has-text-right font-th">Total</th>
-						    </tr>
-						  </thead>
-						  <tbody class="has-text-grey font-th">
-						  	<tr>
-						  		<td>Quart Bel Chair</td>
-						  		<td class="has-text-right">Rp. 345.000</td>
-						  	</tr>
-						  	<tr>
-						  		<td>Quart Bel Chair</td>
-						  		<td class="has-text-right">Rp. 345.000</td>
-						  	</tr>
-						  	<tr>
-						  		<td>Quart Bel Chair</td>
-						  		<td class="has-text-right">Rp. 345.000</td>
-						  	</tr>
-						  </tbody>
-						  <tfoot>
-						  	<tr class="font-tfoot">
-						  		<td>SUBTOTAL</td>
-						  		<td class="has-text-grey has-text-right">Rp. 1.035.000</td>
-						  	</tr>
-						  	<tr class="font-tfoot">
-						  		<td>BIAYA PENGIRIMAN</td>
-						  		<td class="has-text-grey has-text-right">Rp. 19.000</td>
-						  	</tr>
-						  	<tr class="font-tfoot">
-						  		<td>TOTAL</td>
-						  		<td class="has-text-grey has-text-right">Rp. 1.054.000</td>
-							  </tr>
-						  </tfoot>
+						<div class="hr-pesanan" />
+						<table
+							class="table has-background-primary-light is-fullwidth">
+							<thead>
+								<tr>
+									<th class="has-text-grey font-th">
+										Produk
+									</th>
+									<th
+										class="has-text-grey has-text-right font-th">
+										Total
+									</th>
+								</tr>
+							</thead>
+							<tbody class="has-text-grey font-th">
+								{#each products as product}
+								<tr>
+									<td>{product.product_name}</td>
+									<td class="has-text-right">{"Rp. " + formatRupiah(product.product_price * product.qty)}</td>
+								</tr>
+								{/each}
+							</tbody>
+							<tfoot>
+								<tr class="font-tfoot">
+									<td>SUBTOTAL</td>
+									<td class="has-text-grey has-text-right">
+										{"Rp. " + formatRupiah(totalPrice)}
+									</td>
+								</tr>
+								<tr class="font-tfoot">
+									<td>BIAYA PENGIRIMAN</td>
+									<td class="has-text-grey has-text-right">
+										Rp. 19.000
+									</td>
+								</tr>
+								<tr class="font-tfoot">
+									<td>TOTAL</td>
+									<td class="has-text-grey has-text-right">
+										{"Rp. " + formatRupiah(totalPrice + 19000)}
+									</td>
+								</tr>
+							</tfoot>
 						</table>
 						<div class="my-4 has-text-centered">
-							<button class="button is-link is-rounded has-text-weight-bold has-text-centered">Cetak Invoice</button>
+							<button
+								class="button is-link is-rounded has-text-weight-bold has-text-centered"
+								on:click={cetakInvoice}
+								disabled={isEmpty}>Cetak Invoice</button>
 						</div>
 					</div>
 				</div>

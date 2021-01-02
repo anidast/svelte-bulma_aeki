@@ -179,7 +179,7 @@
     //     if (response.status == 200) {
     //         products = res.data;
     //         let len = products.length;
-    //         for (var i = len-6; i < len; i++){
+    //         for (var i = len-10; i < len; i++){
     //             latestProducts = [...latestProducts, products[i]];
     //         }
     //     }
@@ -197,7 +197,7 @@
     //                 const response = await fetch(apiUrl + "product/" + bs.id, {
     //                     method: "GET",
     //                 });
-    //                 res = await response.json();
+    //                 let res = await response.json();
     //                 if (response.status == 200) {
     //                     bestSellerProducts = [...bestSellerProducts, res.data]
     //                 }
