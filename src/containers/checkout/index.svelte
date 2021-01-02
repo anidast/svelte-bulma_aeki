@@ -40,9 +40,9 @@
 			const response = await fetch(apiUrl + "order/" + $user.id, {
 				method: "POST",
 				body: JSON.stringify(co),
-			});
-			let res = await response.json();
-			if (response.status == 200) {
+			})
+			.then(response => {
+				if (response.status == 200) {
 				const downloadUrl = window.URL.createObjectURL(
 					new Blob([res.data])
 				);
@@ -53,7 +53,7 @@
 				link.click();
 				link.remove();
 			}
-			console.log(res);
+			});
 		})();
 	}
 </script>

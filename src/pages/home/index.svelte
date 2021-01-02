@@ -178,7 +178,7 @@
         if (response.status == 200) {
             products = res.data;
             let len = products.length;
-            for (var i = len-10; i < len; i++){
+            for (var i = 0; i < len; i++){
                 latestProducts = [...latestProducts, products[i]];
             }
         }
